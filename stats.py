@@ -1,6 +1,7 @@
 from __future__ import division
 from collections import Counter
 import linear_algebra
+import math
 
 
 def mean(x):
@@ -39,10 +40,15 @@ def de_mean(x):
 	x_bar = mean(x)
 	return [x_i - x_bar for x_i in x]
 
+
 def variance(x):
 	n = len(x)
 	deviations = de_mean(x)
 	return linear_algebra.sum_of_squares(deviations)/(n-1)
+
+
+def standard_deviation(x):
+	return math.sqrt(variance(x))
 
 
 
@@ -50,3 +56,5 @@ if __name__ == '__main__':
 	num_friends = [1, 2, 3, 4, 5, 5]
 	print(mode(num_friends))
 	print(variance(num_friends))
+	print(standard_deviation(num_friends))
+
