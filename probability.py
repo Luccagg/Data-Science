@@ -1,6 +1,8 @@
 #!/usr/bin/python3
 import random 
 import math
+import matplotlib.pyplot as  plt
+import numpy as np
 
 def random_kid():
 	return random.choice(["boy", "girl"])
